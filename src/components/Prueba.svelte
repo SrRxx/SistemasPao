@@ -1,0 +1,1 @@
+<h1>Ejecuta nuevo componente</h1>
