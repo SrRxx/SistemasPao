@@ -32,7 +32,7 @@
   async function obtenerTareas() {
     const q = query(collection(db, "tareas"), orderBy(order_by, order_by2));
     const querySnapshot = await getDocs(q);
-    tareas = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    tareas = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 
     if (tareas != null || tareas != undefined) {
       cargando = false;
@@ -45,8 +45,16 @@
   }
 
   async function actualizarTarea(datos) {
+    console.log(datos);
+    
+
     const tareaRef = doc(db, "tareas", datos.id);
-    await updateDoc(tareaRef, datos);
+    await updateDoc(tareaRef, {
+      titulo: datos.titulo,
+      descripcion: datos.descripcion,
+      prioridad: datos.prioridad,
+      fecha: datos.fecha
+    });
     await obtenerTareas();
   }
 
@@ -345,10 +353,10 @@
   {#if !cargando}
     {#each tareas as t}
       <li class="tarea">
-        <div class="progress">
+        <div class="progress" style="height: 30px">
           <div
-            class="w-full progress-bar bg-info"
-            style={`width: ${t.prioridad === "1" ? "100%" : t.prioridad === "2" ? "50%" : t.prioridad === "3" ? "30%" : ""}`}
+            class="w-full progress-bar bg-info p-2"
+            style={`width: ${t.prioridad === "1" ? "100%" : t.prioridad === "2" ? "50%" : t.prioridad === "3" ? "30%" : ""};color:red;font-weight:600;font-size:25px;`}
             aria-valuenow={t.prioridad === "1"
               ? 100
               : t.prioridad === "2"
@@ -384,8 +392,8 @@
           class="btn btn-primary"
           data-bs-toggle="modal"
           data-bs-target="#editarTarea"
-          on:click={() => {
-            tarea = t;
+          on:click={() => {    
+            tarea = t;      
           }}
         >
           Editar
