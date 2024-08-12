@@ -5,7 +5,7 @@
   import { onMount, beforeUpdate } from "svelte";
   import logo from "$lib/images/icono_app.jpeg";
 
-  //export let inicioEnlace = "./";
+  export let inicioEnlace = "./";
   export let acercaEnlace = "./about";
   export let perfilEnlace = "./perfil";
   export let ingresarEnlace = "./login";
@@ -54,7 +54,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href={acercaEnlace}>
+    <a class="navbar-brand" href={inicioEnlace}>
       <img
         src={logo}
         alt="Logo"

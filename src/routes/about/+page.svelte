@@ -17,14 +17,14 @@
       para nuestros clientes. Nuestra misión es ser aliados estratégicos para
       aquellos que buscan transformar su negocio a través de la tecnología.
     </p>
-    <h2>Misión</h2>
+    <h2><b>Misión</b></h2>
     <p>
       Nuestra misión es utilizar la tecnología para resolver problemas
       cotidianos y empresariales, brindando soluciones personalizadas y
       efectivas que permitan a nuestros clientes alcanzar sus objetivos y
       mejorar su competitividad.
     </p>
-    <h2>Visión</h2>
+    <h2><b>Visión</b></h2>
     <p>
       Nuestra visión es ser líderes en la creación de soluciones tecnológicas
       innovadoras que transformen la forma en que las personas y las empresas
@@ -32,7 +32,7 @@
       de la tecnología para brindar valor agregado a nuestros clientes y
       contribuir al crecimiento y desarrollo de la sociedad.
     </p>
-    <h2>Nuestro logo</h2>
+    <h2><b>Nuestro logo</b></h2>
     <div class="w-full d-flex" style="justify-content: center;">
       <img
         src={logo}
